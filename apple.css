@@ -1,0 +1,582 @@
+html {
+  scroll-behavior: smooth;
+  cursor: default;
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+}
+.main-box {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+/*background images*/
+.background-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 2s linear;
+}
+/*navigation bar*/
+.navigation-bar {
+  width: 100%;
+  height: 10vh;
+  position: absolute;
+  padding: 10px 30px 0 10px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+/*apple logo*/
+.brand-logo {
+  height: 100%;
+}
+/*side options div*/
+.options {
+  display: flex;
+  float: right;
+  width: 40%;
+  justify-content: space-around;
+}
+/*side option*/
+.options > div {
+  font-size: 1.8rem;
+  color: black;
+  font-weight: bold;
+}
+/*side options in link*/
+.links {
+  color: black;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+.links:hover {
+  font-size: 2.4rem;
+}
+/*outer div of phone and tags*/
+.outer-div {
+  width: 100%;
+  height: 80vh;
+  z-index: 100;
+  position: absolute;
+  top: 15vh;
+  display: flex;
+  justify-content: flex-start;
+}
+/*3d phone div*/
+.inner-1 {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 3d iphone  */
+.i-box {
+  width: 100%;
+  height: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 100rem;
+}
+.box {
+  width: 25rem;
+  height: 45rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotate(0deg) rotateY(30deg);
+  transition: all 0.5s linear;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.front {
+  transform: translateZ(5rem);
+  box-sizing: border-box;
+  padding: 2.5rem;
+}
+.iphone-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.back {
+  transform: translateZ(-5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fab {
+  font-size: 8rem;
+  color: black;
+  transform: rotateY(180deg);
+}
+.front::before,
+.front::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10rem;
+  left: 0;
+  background-color: white;
+}
+.front::before {
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  top: 0;
+}
+.front::after {
+  bottom: 0;
+  transform: rotateX(90deg);
+  transform-origin: bottom;
+}
+
+.back::before,
+.back::after {
+  content: "iPhone12";
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 10rem;
+  height: 100%;
+  background-color: white;
+}
+.back::before {
+  left: 0;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+.back::after {
+  right: 0;
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+/* end of 3d iphone  */
+
+.disc {
+  height: 12%;
+  width: 12%;
+  background-color: black;
+  border-radius: 50%;
+  position: relative;
+}
+.control {
+  color: white;
+  font-size: 1.7rem;
+  cursor: pointer;
+  position: absolute;
+}
+.up {
+  top: 0;
+  left: 40%;
+}
+.down {
+  bottom: 0;
+  left: 40%;
+}
+.right {
+  top: 40%;
+  right: 0;
+}
+.left {
+  top: 40%;
+  left: 0;
+}
+/*tag div*/
+.inner-2 {
+  height: 70%;
+  width: 60%;
+}
+.common-tags {
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  transition: all 1s ease-in;
+}
+.inner-2 > p:first-child {
+  font-size: 8rem;
+  letter-spacing: 3px;
+  word-spacing: 4px;
+}
+.inner-2 > p:first-child::before {
+  content: "← ";
+}
+.inner-2 > p:nth-of-type(2) {
+  font-size: 2.5rem;
+  padding-left: 5rem;
+}
+.inner-2 > p:nth-of-type(3) {
+  font-size: 1.8rem;
+  padding-left: 18rem;
+}
+.inner-2 > p:last-child {
+  padding-left: 18rem;
+  margin-top: 20px;
+}
+.buy-btn {
+  padding: 15px 35px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: #3cffff;
+  cursor: pointer;
+  border-radius: 5px;
+  clip-path: polygon(
+    0 1%,
+    19% 14%,
+    41% 0,
+    55% 0,
+    76% 16%,
+    100% 0,
+    100% 100%,
+    76% 83%,
+    54% 100%,
+    40% 100%,
+    20% 85%,
+    0 100%
+  );
+  transition: clip-path 1s ease-in;
+}
+.buy-btn:hover {
+  clip-path: polygon(
+    25% 0,
+    44% 20%,
+    100% 11%,
+    100% 87%,
+    43% 80%,
+    25% 99%,
+    0% 50%
+  );
+}
+
+/* macbook section  */
+
+.laptop {
+  background-color: black;
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
+  gap: 25vh;
+}
+.mac-tag {
+  color: aqua;
+  font-size: 6rem;
+  letter-spacing: 3px;
+  word-spacing: 3px;
+}
+.macbook-air {
+  width: 80rem;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  transform: perspective(800px);
+  position: relative;
+}
+.mac-face {
+  width: 80%;
+  height: 42rem;
+  opacity: 0;
+  z-index: 101;
+}
+.face {
+  border: 1px gray solid;
+  position: absolute;
+  width: 80%;
+  height: 42rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: black;
+  top: 0;
+  z-index: 100;
+  transform: rotateX(90deg);
+  transform-origin: bottom;
+  transition: all 1s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.mac-bot {
+  width: 100%;
+  height: 3%;
+}
+.anime-logo {
+  width: 20%;
+  fill: white;
+}
+.load {
+  width: 200px;
+  height: 2px;
+  background-color: gray;
+  overflow: hidden;
+}
+.juice {
+  width: 200px;
+  height: 2px;
+  background-color: white;
+}
+.hidden-face {
+  opacity: 0;
+}
+.face-2 {
+  border: 1px gray solid;
+  position: absolute;
+  width: 80%;
+  height: 42rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: transparent;
+  transition: all 0.3s linear;
+  top: 0;
+  z-index: 102;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+}
+.face-2 > div:first-child {
+  color: rgb(29, 189, 230);
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.face-2 > div:nth-of-type(2) {
+  font-size: 2rem;
+  letter-spacing: 2;
+}
+.face-2 > button:last-child {
+  width: 200px;
+  height: 40px;
+  color: rgb(29, 189, 230);
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: inset 2px 20px 18px -4px rgba(0, 0, 0, 0.2);
+}
+
+/* apple watches slides  */
+
+.mac-watches {
+  margin-top: 20vh;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.band-main-div {
+  width: 400px;
+  height: 302px;
+  display: flex;
+}
+.band-div {
+  width: 400px;
+  height: 100%;
+  padding: 0 100px;
+  transition: 0.4s all ease-in;
+}
+.band-img {
+  width: 200px;
+  height: 100%;
+}
+.arrow {
+  position: absolute;
+  z-index: 200;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#left {
+  top: 48%;
+  left: 1%;
+}
+#right {
+  top: 48%;
+  right: 1%;
+}
+.watch-main-div {
+  width: 400px;
+  height: 302px;
+  position: absolute;
+  z-index: 100;
+}
+.watch-div {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s all ease-in;
+}
+.watch-img {
+  width: 270px;
+  height: 150px;
+}
+#up {
+  left: 40%;
+  top: -50%;
+}
+#down {
+  left: 40%;
+  bottom: -50%;
+}
+
+/* airpods section  */
+
+.airpods {
+  margin-top: 10vh;
+  width: 100%;
+  height: 100%;
+  padding: 15vh 5vw 0vh 5vw;
+  box-sizing: border-box;
+}
+.airpod-main-div {
+  width: 100%;
+  height: 95vh;
+  background-image: linear-gradient(
+    to right,
+    #ffffff 50%,
+    rgb(50, 197, 255) 50%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-bottom: 25vh;
+}
+.airpod-heading {
+  text-align: center;
+  font-size: 13rem;
+  font-weight: bolder;
+  color: white;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+.airpods-pic {
+  width: 80vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.air-img {
+  width: 20vw;
+  height: 50vh;
+}
+.air-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 150px;
+  cursor: pointer;
+}
+.footer {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.last-nav {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+.last-nav-items {
+  width: 5rem;
+  height: 6rem;
+  cursor: pointer;
+}
+.copywrite {
+  width: 100%;
+  height: 10%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* media query for responsiveness */
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 55%;
+  }
+  .options {
+    width: 80%;
+  }
+  .main-box {
+    height: 155vh;
+  }
+  .inner-1,
+  .inner-2 {
+    width: 100%;
+  }
+  .common-tags {
+    text-align: center;
+  }
+  .inner-2 > p:first-child::before {
+    content: "";
+  }
+  .inner-2 > p:nth-of-type(2) {
+    padding-left: 0;
+  }
+  .inner-2 > p:nth-of-type(3) {
+    padding-left: 0;
+  }
+  .inner-2 > p:last-child {
+    padding-left: 0;
+  }
+  .outer-div {
+    flex-wrap: wrap;
+  }
+  .macbook-air {
+    width: 100%;
+    height: 50vh;
+  }
+  .mac-face,
+  .face,
+  .face-2 {
+    height: 33rem;
+  }
+  .airpods {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .airpod-main-div {
+    height: 140vh;
+    background-image: linear-gradient(
+      to bottom,
+      #ffffff 60%,
+      rgb(50, 197, 255) 40%
+    );
+  }
+}
